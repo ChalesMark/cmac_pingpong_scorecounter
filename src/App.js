@@ -55,6 +55,7 @@ function App() {
   const Logout = async () => {
     auth.signOut();
     setUserID(null);
+    setCounter(null);
   };
 
   // Checks for changes in the auth.
