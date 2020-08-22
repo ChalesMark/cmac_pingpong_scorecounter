@@ -161,7 +161,7 @@ const Counter = (props) => {
   };
 
   return (
-    <div>
+    <div style={{ paddingTop: 50 }}>
       <Modal
         isOpen={deleteMode}
         onRequestClose={() => DeleteMode(false)}
@@ -214,6 +214,7 @@ const Counter = (props) => {
               label="Name"
               variant="outlined"
               value={editPersonName}
+              style={{ width: "70%" }}
               onChange={(e) => setEditPersonName(e.target.value)}
             />
             <Button onClick={() => DeleteMode(true)}>
@@ -325,7 +326,13 @@ const Counter = (props) => {
         {people != null ? (
           <div style={{ width: "80%", margin: 10, alignItems: "center" }}>
             {people.length != 0 ? (
-              <table>
+              <table
+                style={{
+                  margin: "auto",
+                  border: "none",
+                  borderCollapse: "collapse",
+                }}
+              >
                 <thead>
                   <tr>
                     <td width="300" style={Styles.TableHeaders}>
@@ -334,21 +341,28 @@ const Counter = (props) => {
                     <td width="200" style={Styles.TableHeaders}>
                       Win/Loss
                     </td>
-                    <td width="200" style={Styles.TableHeaders}>
-                      Win %
+                    <td width="300" style={Styles.TableHeaders}>
+                      Win%
                     </td>
-                    <td width="100" style={Styles.TableHeaders}></td>
+                    <td width="50" style={Styles.TableHeaders}></td>
                   </tr>
                 </thead>
                 <tbody>
                   {people.map((p, index) => (
-                    <tr key={index}>
-                      <td>{p.name}</td>
-                      <td>
+                    <tr
+                      key={index}
+                      style={{
+                        backgroundColor:
+                          index % 2 == 0 ? "white" : Colors.lightGray,
+                      }}
+                    >
+                      <td style={Styles.TableCell}>{p.name}</td>
+                      <td style={Styles.TableCell}>
                         {p.wins} / {p.losses}
                       </td>
                       <td
                         style={{
+                          padding: 10,
                           color:
                             ((p.wins / (p.wins + p.losses)) * 100).toFixed(2) >
                             50
@@ -360,11 +374,11 @@ const Counter = (props) => {
                               : "black",
                         }}
                       >
-                        {((p.wins / (p.wins + p.losses)) * 100).toFixed(2)} %
+                        {((p.wins / (p.wins + p.losses)) * 100).toFixed(0)}%
                       </td>
-                      <td>
+                      <td style={Styles.TableCell}>
                         <Button onClick={() => setEditPerson(p)}>
-                          <MoreHorizIcon />
+                          <MoreHorizIcon fontSize={"Small"} />
                         </Button>
                       </td>
                     </tr>

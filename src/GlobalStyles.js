@@ -1,5 +1,6 @@
 export const Colors = {
   TopBar: "#478eff",
+  TopBarLight: "#77a6f2",
   TopBarOFF: "#272d96",
   Alt: "#4149d9",
   CounterColor: "#9c5800",
@@ -9,6 +10,8 @@ export const Colors = {
 
   winning: "#009107",
   lossing: "#ff0000",
+
+  lightGray: "#dfe4eb",
 };
 
 export const Styles = {
@@ -18,13 +21,17 @@ export const Styles = {
     alignItems: "center",
     height: "100vh",
   },
+  TableCell: {
+    padding: 10,
+  },
   LoginFields: {
     width: "80%",
     margin: 10,
   },
   TableHeaders: {
-    backgroundColor: Colors.CounterColor,
-    margin: 5,
+    backgroundColor: Colors.TopBarLight,
+    height: 25,
+    padding: 10,
     color: "#fff",
   },
   FullButton: {

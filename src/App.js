@@ -83,13 +83,15 @@ function App() {
           direction="column"
           justify="flex-start"
           alignItems="stretch"
-          style={{ height: "100vh" }}
         >
           <div
             style={{
               backgroundColor: Colors.TopBar,
+              width: "100%",
               height: 50,
               justifyContent: "center",
+              position: "fixed",
+              zIndex: 99,
             }}
           >
             <Grid
@@ -97,7 +99,10 @@ function App() {
               direction="row"
               justify="space-between"
               alignItems="center"
-              style={{ height: "100%", paddingRight: 10, paddingLeft: 10 }}
+              style={{
+                paddingRight: 10,
+                paddingLeft: 10,
+              }}
             >
               <div>
                 <Grid

@@ -63,7 +63,7 @@ const CounterSelection = (props) => {
   };
 
   return (
-    <div>
+    <div style={{ paddingTop: 50 }}>
       {deleteMode != null ? (
         <Modal
           isOpen={deleteMode != null}
