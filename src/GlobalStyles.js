@@ -1,6 +1,8 @@
 export const Colors = {
   TopBar: "#478eff",
-  CounterColor: "#8ab0ed",
+  TopBarOFF: "#272d96",
+  Alt: "#4149d9",
+  CounterColor: "#9c5800",
 
   confirm: "#66e887",
   decline: "#e07460",
@@ -27,6 +29,28 @@ export const Styles = {
   },
   FullButton: {
     width: "80%",
+    margin: 10,
+  },
+  FullButtonSwith: {
+    backgroundColor: Colors.Alt,
+    color: "white",
+    width: "80%",
+    margin: 10,
+  },
+  FullButtonConfirm: {
+    backgroundColor: Colors.TopBar,
+    color: "white",
+    width: "80%",
+    margin: 10,
+  },
+  Counter: {
+    backgroundColor: Colors.TopBar,
+    color: "white",
+    width: "70%",
+  },
+  FullButtonConfirmNoFullWidth: {
+    backgroundColor: Colors.TopBar,
+    color: "white",
     margin: 10,
   },
 };

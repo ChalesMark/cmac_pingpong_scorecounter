@@ -19,12 +19,23 @@ const LoginScreen = (props) => {
       <div
         style={{
           margin: 5,
-          fontFamily: "Acme",
+          fontFamily: "Roboto",
           color: Colors.TopBar,
           fontSize: 50,
         }}
       >
         PING PONG
+      </div>
+      <div
+        style={{
+          margin: 5,
+          fontFamily: "Roboto",
+          color: Colors.TopBarOFF,
+          fontSize: 16,
+          marginBottom: 50,
+        }}
+      >
+        Mark Colling 2020
       </div>
       {loggingIn ? (
         // LOG IN -------------------------------------------------------------------------------
@@ -52,14 +63,14 @@ const LoginScreen = (props) => {
           />
           <Button
             variant="contained"
-            style={Styles.FullButton}
+            style={Styles.FullButtonConfirm}
             onClick={() => props.Login(email, password)}
           >
             Login
           </Button>
           <Button
             variant="contained"
-            style={Styles.FullButton}
+            style={Styles.FullButtonSwith}
             onClick={() => setLogginIn(false)}
           >
             Switch to Register
@@ -91,14 +102,14 @@ const LoginScreen = (props) => {
           />
           <Button
             variant="contained"
-            style={Styles.FullButton}
+            style={Styles.FullButtonConfirm}
             onClick={() => props.Register(email, password)}
           >
             REGISTER
           </Button>
           <Button
             variant="contained"
-            style={Styles.FullButton}
+            style={Styles.FullButtonSwith}
             onClick={() => setLogginIn(true)}
           >
             Switch to Login

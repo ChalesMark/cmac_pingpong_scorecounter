@@ -136,7 +136,7 @@ const CounterSelection = (props) => {
       >
         <Button
           variant="contained"
-          style={Styles.FullButton}
+          style={Styles.FullButtonConfirm}
           onClick={() => setCreationMode(true)}
         >
           Add New Counter
@@ -144,36 +144,30 @@ const CounterSelection = (props) => {
         {counters != null ? (
           <div style={{ width: "80%", margin: 10 }}>
             {counters.length != 0 ? (
-              counters.map((p, index) => (
-                <Grid
-                  container
-                  direction="row"
-                  justify="center"
-                  alignItems="center"
-                  key={{ index }}
-                  style={{ width: "100%", marginTop: 10 }}
-                >
-                  <Button
+              <div>
+                <div style={{ textAlign: "center" }}>Your Counters</div>
+                {counters.map((p, index) => (
+                  <Grid
                     container
                     direction="row"
-                    justify="space-around"
+                    justify="space-between"
                     alignItems="center"
-                    style={{
-                      width: "60%",
-                      height: 50,
-                      backgroundColor: Colors.TopBar,
-                      borderRadius: 5,
-                      color: "white",
-                    }}
-                    onClick={() => props.OpenCounter(p)}
+                    key={{ index }}
+                    style={{ width: "100%", marginTop: 10 }}
                   >
-                    {p.name}
-                  </Button>
-                  <Button onClick={() => setDeleteMode(p)}>
-                    <DeleteIcon />
-                  </Button>
-                </Grid>
-              ))
+                    <Button
+                      variant="contained"
+                      style={Styles.Counter}
+                      onClick={() => props.OpenCounter(p)}
+                    >
+                      {p.name}
+                    </Button>
+                    <Button onClick={() => setDeleteMode(p)}>
+                      <DeleteIcon style={{ color: Colors.decline }} />
+                    </Button>
+                  </Grid>
+                ))}
+              </div>
             ) : (
               <div style={{ textAlign: "center" }}>You have no counters :c</div>
             )}

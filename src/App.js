@@ -105,7 +105,7 @@ function App() {
                   justify="flex-start"
                   alignItems="center"
                   style={{
-                    fontFamily: "Acme",
+                    fontFamily: "Roboto",
                     color: "white",
                   }}
                 >
@@ -115,7 +115,7 @@ function App() {
               </div>
 
               <Button onClick={() => Logout()}>
-                <ExitToAppIcon fontSize="large" />
+                <ExitToAppIcon fontSize="large" style={{ color: "white" }} />
               </Button>
             </Grid>
           </div>

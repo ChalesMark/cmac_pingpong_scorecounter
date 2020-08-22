@@ -288,7 +288,7 @@ const Counter = (props) => {
         <Grid
           container
           direction="row"
-          justify="flex-start"
+          justify="space-between"
           alignItems="center"
           style={{
             width: "80%",
@@ -296,17 +296,17 @@ const Counter = (props) => {
         >
           <Button onClick={() => props.return()}>
             <ArrowBackIosIcon fontSize="large" />
-            Return
+          </Button>
+
+          <Button
+            variant="contained"
+            style={Styles.FullButtonConfirmNoFullWidth}
+            onClick={() => setCreationMode(true)}
+          >
+            Add New Participant
           </Button>
         </Grid>
 
-        <Button
-          variant="contained"
-          style={Styles.FullButton}
-          onClick={() => setCreationMode(true)}
-        >
-          Add New Participant
-        </Button>
         <Select
           value={sorting}
           onChange={(e) => {
